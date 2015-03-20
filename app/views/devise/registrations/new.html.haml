@@ -1,0 +1,24 @@
+= title t("devise.registrations.new.title")
+
+= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+  = f.input :professional, as: :radio_buttons, wrapper: :vertical_radio_and_checkboxes, collection: [["Particular", false], ["Profesional", true]]
+  = f.input :name, required: true
+  = f.input :email, autofocus: true
+  = f.input :password
+  = f.input :password_confirmation
+  #professional
+    = f.association :state
+    = f.input :address
+    = f.input :phone
+    = f.input :company_description, input_html: { rows: 3 }
+  = f.input :terms, label: false do
+    = f.check_box :terms
+    %label{for: "user_terms"}
+      = legal_text
+  %hr.space-xs
+  = f.button :submit, t("devise.registrations.new.button"), class: "btn-primary"
+  %hr
+  .text-center
+    %strong ¿Ya tienes cuenta?
+    %hr.space-sm
+    = button_link_to t("devise.sessions.link"), new_session_path(resource_name), "btn-default btn-lg"

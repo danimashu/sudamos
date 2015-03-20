@@ -1,0 +1,26 @@
+= content_for :meta_title, "Material de deporte de segunda mano"
+- set_meta_tags description: "Compra venta de material deportivo nuevo y de segunda mano. Bicicletas de montaña, tablas de surf, camisetas de fútbol y más. Artículos y noticias."
+
+= content_for(:teaser) do
+  #teaser-home
+    .container.text-center
+      %h1 Bicicletas de segunda mano
+      %h2 Bicicletas de montaña, carretera, paseo, accesorios, componentes y más. Material de primera y segunda mano. Podrás encontrar también anuncios del resto de deportes.
+      .buttons
+        = button_link_to "Vende tu bicicleta gratis", [:new, :user, :advert]
+.row
+  .col-sm-8.text-center
+    .row
+      = render @adverts
+    = button_link_to "Buscar más ofertas »", [:adverts], "btn-primary-inverse"
+    %hr.visible-xs
+  .col-sm-4.text-center.line-left
+    %h3 Síguenos en
+    = render "social"
+    %hr
+    %h3.primary Temas del día
+    .row
+      = render @articles
+    = button_link_to "Otros temas interesantes »", [:articles], "btn-primary-inverse"
+    %hr.space
+    = render "subscribers/form"

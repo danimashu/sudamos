@@ -1,0 +1,7 @@
+<% if @attachment.new_record? %>
+  alert("Error: <%= j @attachment.errors.full_messages.uniq.join(', ').html_safe %>");
+<% else %>
+  $("#attachments").append('<%= j render(@attachment) %>');
+  $("#<%= dom_id(@attachment) %>").hide();
+  $("#<%= dom_id(@attachment) %>").fadeIn();
+<% end %>

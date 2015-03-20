@@ -1,0 +1,9 @@
+#subscriber-form
+  %h3
+    = icon "envelope-o"
+    Newsletter
+  %p Te enviaremos temas interesantes dos veces al mes. Sin SPAM, palabra.
+  = simple_form_for [Subscriber.new] do |f|
+    = f.text_field :email, placeholder: "Escribe aquí tu email...", class: "full-width form-control text-center"
+    %hr.space-sm
+    = f.button :submit, "Subscribirse", class: "btn-primary btn-block"

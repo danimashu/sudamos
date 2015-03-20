@@ -1,0 +1,6 @@
+%tr[article]
+  %td= article.id
+  %td= article.created_at
+  %td= article.title
+  %td
+    = link_to "Edit", [:edit, :admin, article]

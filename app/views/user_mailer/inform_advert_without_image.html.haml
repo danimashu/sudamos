@@ -1,0 +1,6 @@
+%p
+  Hola #{@user.name},
+%p
+  tu anuncio #{link_to @advert.title, advert_url(@advert)} no tiene ninguna imagen. Recuerda que los anuncios sin imágenes son poco llamativos y suelen pasar desapercibidos a los internautas. Puedes añadir una imagen pulsando el siguiente enlace:
+%p
+  #{link_to user_advert_attachments_url(@advert), user_advert_attachments_url(@advert)}

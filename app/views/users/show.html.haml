@@ -1,0 +1,23 @@
+= title @user.name
+- set_meta_tags description: "Todos los anuncios de #{@user.name}. En sudamos.es puedes encontrar bicicletas de montaña, tablas de surf, camisetas de fútbol y más."
+
+.row
+  .col-sm-4
+    - if @user.address.present? || @user.state.present? || @user.phone.present? || @user.company_description.present?
+      .well.well-sm
+        %h3= @user.name
+        - if @user.address.present? || @user.state.present?
+          %p.muted
+            = @user.address
+            %em= "(#{@user.state.name})"
+        - if @user.phone.present?
+          = icon "mobile"
+          = phone_for @user.phone
+        - if @user.company_description.present?
+          %hr.sm
+          %p= simple_format @user.company_description
+    .well.well-sm
+      = render partial: "contacts/form"
+  .col-sm-8
+    .row
+      = render @adverts

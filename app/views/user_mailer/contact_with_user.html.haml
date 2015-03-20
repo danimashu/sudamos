@@ -1,0 +1,11 @@
+%p
+  Hola #{@user.name},
+%p
+  alguien te ha enviado un mensaje desde el formulario de contacto de tu página de perfil.
+%p
+  %strong Email:
+  = @contact.email
+%p
+  %strong Mensaje
+  %br
+  = simple_format @contact.message

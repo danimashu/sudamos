@@ -1,0 +1,34 @@
+- set_meta_tags description: @article.teaser
+
+= content_for :meta_title, @article.title
+
+= content_for(:teaser) do
+  #teaser
+
+- cache expires_in: 1.week do
+  .row.article-show
+    %article{itemscope: "", itemtype: "http://schema.org/Article"}
+      .col-sm-8.col-md-7.col-lg-6.col-lg-offset-1
+        %h1{itemprop: "name"}= @article.title
+      .clearfix
+      .col-sm-8.col-md-7.col-lg-6.col-lg-offset-1
+        - if @article.image_on_top?
+          = image_tag(@article.thumbnail_link, class: "full-width", itemprop: "image")
+        .article-body{itemprop: "articleBody"}= markdown(@article.body).html_safe
+        %hr.space
+        %hr
+        = render partial: "addthis", locals: { header: "Comparte este artículo", share_url: article_url(@article), share_title: @article.title }
+        %hr
+        = render "disqus"
+        %hr
+        = render "adsense"
+      .col-sm-4.col-md-offset-1.col-lg-3
+        = render "subscribers/form"
+        %h3.default Temas destacados
+        .row
+          = render Article.spotlighted.excluding(@article.id).limit(3)
+        %h3.primary Anuncios destacados
+        .row
+          = render Advert.spotlighted.limit(3)
+
+  %meta{itemprop: "url", content: article_url(@article)}

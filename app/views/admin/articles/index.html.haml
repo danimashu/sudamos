@@ -1,0 +1,9 @@
+- set_meta_tags noindex: true, nofollow: true
+
+= title "Articulos"
+
+= button_link_to "Nuevo articulo", [:new, :admin, :article], "btn-default"
+
+%hr.space
+
+= table_for collection, :id, :created_at, :title

@@ -1,0 +1,19 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} was successfully created."
+      update:
+        notice: "%{resource_name} was successfully updated."
+      destroy:
+        notice: "%{resource_name} was successfully destroyed."
+        alert: "%{resource_name} could not be destroyed."
+
+    adverts:
+      renew:
+        notice: "Thank you. You have renewed your advert."
+        alert: "You will can renew the advert in %{until}."
+
+    contacts:
+      create:
+        alert: "The message has not been sended. Some errors on the form."

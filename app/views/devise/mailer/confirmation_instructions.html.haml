@@ -1,0 +1,4 @@
+%p
+  Hola #{@resource.name},
+%p
+  gracias por registrarte en #{link_to "sudamos.es", root_url}. Para confirmar tu cuenta haz click en el siguiente link: #{link_to 'Confirmar cuenta', confirmation_url(@resource, confirmation_token: @resource.confirmation_token)}

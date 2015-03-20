@@ -1,0 +1,8 @@
+= simple_form_for [:user, parent, @attachment], html: { id: "upload" } do |f|
+  / = f.error_notification
+  = f.input :image, as: :file
+  = custom_transloadit :s3_store, { fields: { a_id: parent.id.to_s, a_title: parent.slug, hash: random_string, expire: 1.year.from_now.httpdate.to_s } }
+%hr.space
+= button_link_to "Finalizar", [:user, :adverts], "btn-default"
+
+= transloadit_jquerify :upload, wait: true, triggerUploadOnFileSelection: true

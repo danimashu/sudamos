@@ -1,0 +1,16 @@
+%div[contact]
+  %hr
+  %strong.lg{class: "#{contact.read? ? "text-muted" : ""}"}
+    Recibido el
+    = l contact.created_at, format: :short
+  - unless contact.read?
+    = link_to "[Marcar como leído]", read_user_kontact_path(contact), method: :put, class: "small pull-right", remote: true
+  .text-muted.small
+    = link_to contact.email, "mailto:#{contact.email}"
+    |
+    - if contact.advert.present?
+      Mensaje en relación a
+      = link_to contact.advert.title, [contact.advert], target: "_blank"
+    - else
+      Mensaje directo
+  %p= contact.message

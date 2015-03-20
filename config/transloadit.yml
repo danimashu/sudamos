@@ -1,0 +1,25 @@
+defaults: &defaults
+  # the jquery_sdk version you want to use, read up on it here:
+  # https://transloadit.com/blog/2013/02/transloadit-javascript-plugin-and-jquery-1-9
+  # defaults to latest
+  # use "v1.0.0" if you need IE6 support (using jQuery < 1.9)
+  jquery_sdk_version: 'latest'
+  auth:
+    key     : <%= Figaro.env.transloadit_auth_key! %>
+    secret  : <%= Figaro.env.transloadit_auth_secret! %> # this is optional, but highly recommended, https://transloadit.com/docs/authentication
+    duration: 1800 # 30 minute validity period for signed upload forms
+  templates:
+    # template identified by template_id
+    s3_store: <%= Figaro.env.transloadit_templates_s3_store! %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

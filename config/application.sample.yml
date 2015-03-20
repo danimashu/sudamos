@@ -1,0 +1,42 @@
+admin_user:
+admin_password:
+
+devise_secret_key:
+rollbar_access_token:
+new_relic_license_key:
+transloadit_auth_key:
+transloadit_auth_secret:
+transloadit_templates_s3_store:
+
+development:
+  secret_key_base:
+  fb_client_id:
+  fb_client_secret:
+
+test:
+  secret_key_base:
+  fb_client_id:
+  fb_client_secret:
+
+staging:
+  secret_key_base:
+  fb_client_id:
+  fb_client_secret:
+  aws_access_key_id:
+  aws_secret_access_key:
+  fog_directory:
+  mandrill_username:
+  mandrill_password:
+
+production:
+  secret_key_base:
+  fb_client_id:
+  fb_client_secret:
+  aws_access_key_id:
+  aws_secret_access_key:
+  fog_directory:
+  transloadit_auth_key:
+  transloadit_auth_secret:
+  transloadit_templates_s3_store:
+  mandrill_username:
+  mandrill_password:

@@ -1,0 +1,17 @@
+en:
+  #######################################################################
+  ## Model labels
+  #######################################################################
+
+  activerecord:
+    models:
+      attachment: Image
+
+  #######################################################################
+  ## Error messages
+  #######################################################################
+
+  errors:
+    messages:
+      only_images: wrong file type, only images allowed
+      max_attachments: "can't add more images"

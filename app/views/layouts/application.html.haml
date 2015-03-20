@@ -1,0 +1,17 @@
+!!!
+%html{lang: "es"}
+  = render "head"
+  %body
+    = render "topmenu"
+    = yield(:teaser)
+    - if content_for?(:title)
+      #teaser
+        = yield(:title)
+    #main
+      .container
+        - if content_for?(:content)
+          = yield(:content)
+        - else
+          = render_flash
+          = yield
+    = render "footer"

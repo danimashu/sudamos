@@ -1,0 +1,9 @@
+= simple_form_for resource, url: [:user, :user] do |f|
+  = f.input :professional, required: true, as: :radio_buttons, wrapper: :vertical_radio_and_checkboxes, collection: [["Particular", false], ["Profesional", true]]
+  = f.input :name
+  #professional
+    = f.association :state
+    = f.input :address
+    = f.input :phone
+    = f.input :company_description, input_html: { rows: 3 }
+  = f.button :submit

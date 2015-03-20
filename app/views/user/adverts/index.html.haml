@@ -1,0 +1,13 @@
+= title t("user.adverts.index.title")
+
+- if collection.any?
+  .text-right
+    = button_link_to "Publicar anuncio", [:new, :user, :advert], "btn-default"
+  = render collection
+
+- else
+  .text-right
+    = button_link_to "Publicar anuncio", [:new, :user, :advert], "btn-default"
+  %hr
+  .text-center
+    %strong No hay anuncios publicados

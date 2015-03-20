@@ -1,0 +1,29 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %a#logo.navbar-brand{href: root_path}
+        = image_tag "sudamos.png"
+      %button.navbar-toggle{type: "button", "data-toggle" => "collapse", "data-target" => "#navbar-collapse"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .collapse.navbar-collapse#navbar-collapse
+      = tabs_tag builder: MenuTabBuilder, open_tabs: { class: "nav navbar-nav navbar-right" } do |tab|
+        = tab.adverts "Anuncios", [:adverts]
+        = tab.articles "Blog", [:articles]
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown"}
+              Mi cuenta
+              = icon "caret-down"
+            = tabs_tag builder: MenuTabBuilder, namespace: :user, open_tabs: { class: "dropdown-menu" } do |tab|
+              = tab.adverts "Mis anuncios", [:user, :adverts]
+              = tab.contacts "Mensajes", [:user, :kontacts]
+              = tab.config "Editar perfil", [:edit, :user, :user]
+              %li.divider
+              %li= link_to t("devise.sessions.link_delete"), destroy_user_session_path
+        - else
+          %li
+            = link_to "Iniciar sesión", new_user_session_path
+        = button_link_to "Publicar anuncio", [:new, :user, :advert], "btn-primary navbar-btn pull-right", ""

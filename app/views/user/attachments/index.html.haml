@@ -1,0 +1,13 @@
+= title(truncate t("user.attachments.index.title", for: @advert.title), length: 40, separator: " ", omission: "…")
+
+- if parent.attachments.count < MAX_ATT
+  = info_box t("user.attachments.index.info", remaining_att: pluralize(MAX_ATT - parent.attachments.count, "imagen", "imágenes")).html_safe
+  = render "form"
+- else
+  = info_box "Se ha llegado al límite de imágenes"
+  = button_link_to "Volver a la lista de anuncios", [:user, :adverts], "btn-default"
+
+%hr
+
+#attachments.row
+  = render collection

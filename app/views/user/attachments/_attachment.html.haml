@@ -1,0 +1,9 @@
+.col-xs-6[attachment]
+  = image_tag attachment.md_url, class: "img-rounded full-width"
+  %hr.space
+  = button_link_to t("set_as_main"), [:main, :user, @advert, attachment], "btn-default btn-xs"
+  = remove_button t("remove"), [:user, @advert, attachment], "btn-xs btn-link"
+  - if attachment.main?
+    %span.label.label-default
+      = t('main_image')
+  %hr.space

@@ -1,0 +1,8 @@
+= title t("devise.unlocks.new.title")
+
+= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
+  = f.input :email, :required => true
+  .form-actions
+    = f.button :submit, t("devise.unlocks.new.button"), :class => "btn-primary btn-large"
+
+= render :partial => "devise/shared/links"

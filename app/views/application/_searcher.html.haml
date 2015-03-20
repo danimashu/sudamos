@@ -1,0 +1,3 @@
+#searcher
+  = simple_form_for @search, url: [:searcher, :adverts], wrapper: :inline_form, html: { class: "form-inline" } do |f|
+    = f.input :state_search_term_eq, collection: State.asc.map{|s| [s.name, s.search_term]}, label: false, prompt: "Provincia", include_blank: true, input_html: { onchange: "this.form.submit()" }

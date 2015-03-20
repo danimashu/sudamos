@@ -1,0 +1,38 @@
+es:
+  flash:
+    actions:
+      create:
+        notice: "Se ha creado correctamente."
+      update:
+        notice: "Se ha editado correctamente."
+      destroy:
+        notice: "Se ha eliminado correctamente."
+        alert: "No se ha podido eliminar."
+
+    adverts:
+      create:
+        notice: "Anuncio publicado. <strong>Ahora añade alguna imagen</strong>."
+      edit:
+        notice: "Has editado el anuncio correctamente."
+      renew:
+        notice: "Has renovado el anuncio correctamente."
+        alert: "Podrás renovar el anuncio en %{until}."
+      retire:
+        notice: "El anuncio se ha retirado correctamente."
+
+    attachments:
+      create:
+        notice: "Has añadido la imagen correctamente."
+        alert: "Archivo de imagen incorrecto"
+      main:
+        notice: "La imagen principal ha sido actualizada."
+
+    contacts:
+      create:
+        notice: "El mensaje se ha enviado correctamente."
+        alert: "No se ha podido enviar el mensaje. Por favor, rellena el formulario correctamente."
+
+    subscribers:
+      create:
+        notice: "¡Estupendo! Recibirás alrededor de dos emails al mes con artículos deportivos interesantes."
+        alert: "El formato del email no es correcto."

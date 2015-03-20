@@ -1,0 +1,28 @@
+es:
+  simple_form:
+    yes: Sí
+    no: No
+    required:
+      text: requerido
+      mark: "*"
+    error_notification:
+      default_message: "Se han encontrado algunos errores, por favor comprueba:"
+
+    labels:
+
+    hints:
+      attachment:
+        image: Imagen en formato <strong>PNG o JPEG</strong> con un tamaño máximo de <strong>2MB</strong>
+
+    placeholders:
+      default:
+        state_id_in: Hols
+      advert:
+        title: "Tabla de surf…"
+        description: "Vendo por falta de uso…"
+        phone:
+      contact:
+        email: "Email"
+        message: "Escribe el mensaje aquí…"
+      user:
+        company_description: ""

@@ -1,0 +1,22 @@
+= simple_form_for [:user, resource], html: { role: "form" }, wrapper: :vertical_form do |f|
+  = f.input :title, input_html: { maxlength: "#{ADVERT_TITLE_SIZE}" }
+  = f.input :description, input_html: { rows: "3" }
+  = f.association :state
+  .row
+    .col-xs-6
+      = f.association :section
+      = f.input :price do
+        .input-group
+          .input-group-addon €
+          = f.input_field :price, class: "form-control", step: "5"
+    .col-xs-6
+      = f.association :sport
+      = f.input :phone do
+        .input-group
+          .input-group-addon= icon "mobile"
+          = f.input_field :phone, class: "form-control"
+  %hr.space-sm
+  = f.button :submit, class: "btn-primary"
+  = button_link_to "Volver", [:user, :adverts], "btn-default btn-sm"
+
+= render "conversion"

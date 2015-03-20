@@ -1,0 +1,5 @@
+%tr[user]
+  %td= user.id
+  %td= user.email
+  %td
+    = link_to "Become", [:become, :admin, user], method: :post, class: "btn"

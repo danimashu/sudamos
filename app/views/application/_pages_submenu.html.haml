@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-body.text-center
+    = tabs_tag builder: MenuTabBuilder, namespace: :public, open_tabs: { class: "nav nav-pills nav-stacked" } do |tab|
+      = tab.faq "Preguntas frecuentes", page_path("faq")
+      = tab.contact_with_us "Contacta con nosotros", [:new, :feedback]
+      = tab.terms "Términos y condiciones", page_path("terms")
+      = tab.privacy "Política de privacidad", page_path("privacy")

@@ -1,0 +1,31 @@
+%footer
+  .container
+    .row
+      .col-sm-3.col-sm-push-9
+        %h4 Legal
+        %ul.list-unstyled
+          %li= link_to "Términos y condiciones", page_path("terms")
+          %li= link_to "Política de privacidad", page_path("privacy")
+        %hr.sm
+        %p#cookies
+          Utilizamos cookies propias y de terceros para mejorar la experiencia de navegación, al continuar la navegación entendemos que acepta los #{link_to "Términos y condiciones", page_path("terms")}
+      .col-sm-3.col-sm-pull-3
+        %h4 Sudamos
+        %ul.list-unstyled
+          %li= link_to "Anuncios", [:adverts]
+          %li= link_to "Temas interesantes", [:articles]
+          %li= link_to "Gestionar mis anuncios", [:user, :adverts]
+          %li= link_to "Contactar con nosotros", [:new, :feedback]
+      .col-sm-3.col-sm-pull-3
+        %h4 Lo más buscado
+        %ul.list-unstyled
+          %li= link_to "Bicis de montaña", sport_search_adverts_path("bicicletas-de-montana")
+          %li= link_to "Tablas de surf", sport_search_adverts_path("surf")
+          %li= link_to "Camisetas baratas de fútbol", sport_search_adverts_path("futbol")
+          %li= link_to "Cintas de correr de segunda mano", sport_search_adverts_path("fitness")
+          %li= link_to "Zapatillas de running", sport_search_adverts_path("running")
+    .social.text-center= render "social"
+    #last-footer.text-center
+      %small.text-muted
+        © 2014 Sudamos · Developed by
+        = link_to "Daniel Madrid", "http://danimadrid.com/", target: "_blank"

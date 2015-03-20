@@ -1,0 +1,24 @@
+= title t("devise.sessions.new.title")
+
+= button_link_to "Iniciar sesión con Facebook", user_omniauth_authorize_path(:facebook), "btn-facebook btn-block btn-lg", "facebook-square"
+%hr.space
+.text-center
+  %strong ...o directamente con tu cuenta de email:
+
+%hr
+
+= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+  = f.hidden_field :remember_me, value: true
+  = f.input :email, required: false, autofocus: true
+  = f.input :password, required: false
+  %hr.space-sm
+  .row
+    .col-xs-6
+      = f.button :submit, t("devise.sessions.new.button"), class: "btn-primary"
+    .col-xs-6.text-right
+      = render partial: "devise/shared/links"
+  %hr
+  .text-center
+    %strong ¿No tienes cuenta?
+    %hr.space-sm
+    = button_link_to t("devise.registrations.link"), new_registration_path(resource_name), "btn-default btn-lg"

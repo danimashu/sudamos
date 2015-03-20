@@ -1,0 +1,5 @@
+= title(truncate t("user.contacts.index.title", for: @advert.title), length: 40, separator: " ", omission: "…")
+
+.text-right
+  = button_link_to "Volver a mis anuncios", [:user, :adverts], "btn-default btn-sm"
+= render collection

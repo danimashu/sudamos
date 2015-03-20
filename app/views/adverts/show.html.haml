@@ -1,0 +1,59 @@
+= title @advert.title
+- set_meta_tags description: truncate(@advert.description, length: 150, separator: " ", omission: "…")
+
+.row.advert-show{itemscope: "", itemtype: "http://schema.org/Product"}
+  %meta{itemprop: "name", content: "Andele"}
+  .col-sm-7
+    .row
+      .col-xs-10
+        #main-image
+          - @advert.attachments.each_with_index do |att, i|
+            - if i == 0
+              = image_tag att.lg_url, class: "full-width", id: dom_id(att), itemprop: "image"
+            - else
+              = image_tag att.lg_url, class: "full-width not-active", id: dom_id(att)
+      .col-xs-2
+        - @advert.attachments.each do |att|
+          = link_to image_tag(att.sm_url), "##{dom_id(att)}", class: "sm-image"
+          %hr.space-xs
+      %hr.space-sm
+    .clearfix
+    %hr.space
+    %strong
+      = icon "map-marker"
+      = @advert.state.name
+      .pull-right{itemprop: "offers", itemscope: "", itemtype: "http://schema.org/Offer"}
+        %span{itemprop: "price"}
+          = price_for @advert
+    %hr.sm
+    %hr.space-sm
+    .advert-desc{itemprop: "description"}
+      = simple_format @advert.description
+    %hr.sm
+    %small.text-muted
+      = link_to "#{icon("exclamation-circle")} #{t("create_abuse")}".html_safe, [@advert, :abuses], method: :post, confirm: t("are_you_sure")
+      .pull-right
+        = published_for @advert.created_at
+        |
+        = times_visited_for @advert
+    %hr.sm
+  .col-sm-5.col-md-4.col-md-offset-1
+    = render partial: "addthis", locals: { header: "Comparte este anuncio", share_url: advert_url(@advert), share_title: @advert.title }
+    %hr.space
+    .well.well-sm
+      %span.text-muted
+        = link_to @advert.user.name, [@advert.user]
+        - if @advert.phone.present?
+          |
+          = icon "mobile"
+          = phone_for @advert.phone
+          %hr.space-xs
+      = render partial: "contacts/form", locals: { advert: @advert }
+    %hr
+    = render "adsense"
+    %h3.default Artículos recomendados
+    .row
+      = render Article.spotlighted.limit(2)
+    %h3.primary Anuncios recomendados
+    .row
+      = render Advert.spotlighted.excluding(@advert.id).limit(2)

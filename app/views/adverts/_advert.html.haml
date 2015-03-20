@@ -1,0 +1,11 @@
+.advert-wrap.text-muted
+  %div[advert]
+    = link_to image_tag(image_url_for(advert.main_attachment, :md)), [advert]
+    .inbox
+      = link_to truncate(advert.title, length: 29, separator: " ", omission: "…"), [advert], class: "title", title: advert.title
+      %br
+      %small.text-muted
+        = icon "map-marker"
+        = advert.state.name
+        |
+        = price_for advert

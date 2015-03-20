@@ -1,0 +1,10 @@
+= title "Contacta con nosotros"
+- set_meta_tags description: "Para cualquier duda, consulta, sugerencia, propuesta, puedes ponerte en contacto con nosotros. En sudamos.es se anuncian bicicletas de montaña, tablas de surf, camisetas de fútbol, y más."
+= info_box t("feedbacks.new.info")
+
+= simple_form_for resource do |f|
+  = f.input :email
+  = f.input :message, as: :text, input_html: { rows: 10 }
+
+  .form-actions
+    = f.button :submit, class: "btn-default"

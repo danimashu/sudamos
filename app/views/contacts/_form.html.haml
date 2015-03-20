@@ -1,0 +1,13 @@
+= simple_form_for [resource, resource.contacts.new(newsletter: true)] do |f|
+  = f.text_field :email, placeholder: "Email", class: "full-width form-control"
+  %hr.space-xs
+  = f.text_area :message, rows: 3, placeholder: "Escribe tu mensaje aquí...", class: "full-width form-control"
+  %hr.space-xs
+  %small.text-muted
+    = legal_text
+    %br
+    = f.check_box :newsletter
+    %label#contact-newsletter-label{for: "contact_newsletter"} Recibir artículos deportivos interesantes
+  %hr.space-xs
+  = f.button :submit, class: "btn-primary btn-block"
+  .clearfix

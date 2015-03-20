@@ -1,0 +1,135 @@
+es:
+  #######################################################################
+  ## Common strings
+  #######################################################################
+  cancel: Cancelar
+  finish: Hecho
+  actions: Acciones
+  renew: Renovar
+  edit: Editar
+  manage_images: Imágenes
+  remove: Eliminar
+  are_you_sure: Estás seguro?
+  hello: Hola
+  published: "Publicado:"
+  ago: "Publicado hace %{time_ago}"
+  expire: "Caduca:"
+  in: "en %{time}"
+  viewed_listed: "Veces visto/listado:"
+  for_sell: Se vende
+  for_buy: Se compra
+  select_section: Selec. una sección...
+  select_state: Selec. una provincia...
+  select_sport: Selec. un deporte...
+  create_advert: "Crea un anuncio GRATIS!"
+  interested: "Interesados:"
+  message: mensaje
+  nobody_contacted_yet: Nadie todavía
+  create_abuse: Denunciar abuso
+  accept: "Acepto las %{terms} y la %{privacy}"
+  terms: condiciones
+  privacy: privacidad
+  phone: "Teléfono: "
+  main_image: "Imagen principal"
+  set_as_main: "Principal"
+
+  #######################################################################
+  ## Menus
+  #######################################################################
+  menu:
+    default:
+      adverts: Anuncios
+      home: Inicio
+      user: Mi Cuenta
+      admin: Admin
+    user:
+      adverts: Mis anuncios
+      config: Configuración
+    admin:
+      abuses: Denuncias
+      adverts: Anuncios
+      contacts: Contacts
+      users: Usuarios
+    public:
+      help: Ayuda
+      faq: Preguntas frecuentes
+      contact_with_us: Contacta con nosotros
+      terms: Términos y condiciones
+      privacy: Política de privacidad
+
+  #######################################################################
+  ## Mailer
+  #######################################################################
+  mailer:
+    subject:
+      contact_with_advert: "Interesado en %{advert_title}"
+      contact_with_user: Alguien te envía un mensaje desde sudamos.es
+      inform_advert_near_to_expire: Tu anuncio está a punto de caducar
+      inform_posibility_of_renew: Tu anuncio hace tiempo que no se renueva
+      inform_advert_without_image: "Tu anuncio no tiene imágenes"
+
+  #######################################################################
+  ## View specific
+  #######################################################################
+  adverts:
+    index:
+      new: Crear anuncio
+      title: "%{num} anuncios encontrados"
+  contacts:
+    new:
+      title: Contactar con el anunciante
+  feedbacks:
+    new:
+      info: Para cualquier duda, consulta, sugerencia, propuesta, etc, puedes ponerte en contacto con nosotros a través del siguiente formulario. Gracias.
+      title: Danos tu opinión
+  user:
+    adverts:
+      index:
+        info: "Recuerda que puedes <strong>renovar cualquier anuncio una vez al día</strong>. Un anuncio renovado pasa a ocupar la primera posición en la lista de anuncios y por tanto tiene <strong>más posibilidades de venderse</strong>."
+        new: Crear anuncio
+        title: Mis anuncios
+      new:
+        info: "<ul class='unstyled'><li><b>Paso 1:</b> Rellena el siguiente formulario y pulsa en botón <i>“Siguiente paso”</i></li><li><b>Paso 2:</b> Añade imágenes al anuncio</li></ul>"
+        title: Crear anuncio
+      edit:
+        title: Editar anuncio
+    attachments:
+      index:
+        info: "Los anuncios con imágenes tienen mayor visibilidad. Puedes añadir %{remaining_att} más."
+        new: Añadir imagen
+        title: "Imágenes de %{for}"
+      new:
+        title: "Añadir imagen a %{for}"
+    contacts:
+      index:
+        title: "Mensajes en %{for}"
+    users:
+      edit:
+        title: Configuración de mi cuenta
+        cancel_account: Cancelar cuenta
+        cancel_info: "<strong>Cancelar una cuenta es una acción irreversible</strong>. Se borrarán todos tus anuncios, mensajes y perfil personal. Por favor, asegúrate antes de pulsar el siguiente botón."
+  searcher:
+    title_or_description_cont: Palabras clave
+    price_gteq: Desde
+    price_lteq: Hasta
+    state_id_in: Provincia
+    section_id_in: Sección
+    fuel_id_in: Combustible
+
+  #######################################################################
+  ## Submit buttons
+  #######################################################################
+  helpers:
+    submit:
+      advert:
+        create: Siguiente paso
+      attachment:
+        create: Subir imagen
+      contact:
+        create: Enviar
+      feedback:
+        create: Enviar
+      search:
+        create: Buscar
+      user:
+        update: Actualizar perfil

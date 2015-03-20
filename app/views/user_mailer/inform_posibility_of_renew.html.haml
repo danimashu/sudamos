@@ -1,0 +1,6 @@
+%p
+  Hola #{@user.name},
+%p
+  tu anuncio #{link_to @advert.title, advert_url(@advert)} hace tiempo que no se renueva. Puedes renovarlo gratuitamente pulsando en el siguiente link: #{link_to "Renovar", renew_user_advert_url(@advert)} o entrando en tu area personal #{link_to "Mis anuncios", user_adverts_url} y pulsando el botón renovar.
+%p
+  Recuerda que cada vez que renuevas un anuncio, éste pasa a ocupar la primera posición en la lista de anuncios y por tanto aumentas las posibilidades de atraer a potenciales interesados. Un anuncio puede ser renovado cada 24 horas.

@@ -1,0 +1,9 @@
+= title "Editar perfil"
+
+= render "form"
+
+%hr
+
+.alert.alert-danger{role: "alert"}
+  %h4 Cancelar cuenta
+  %p Eliminar una cuenta es una acción irreversible. Se borrarán todos tus anuncios, mensajes y perfil personal. Asegurate antes de clicar#{remove_link "cancelar cuenta", [:user, :registration], "alert-link", ""}.

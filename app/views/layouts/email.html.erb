@@ -1,0 +1,27 @@
+<html>
+<head>
+  <style type="text/css">
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, Georgia, serif;
+      max-width: 600px;
+      font-size: 16px;
+    }
+    p {
+      line-height: 1.5em;
+      margin: 0.5em 0;
+    }
+    a {
+      color: #428bca;
+    }
+  </style>
+  <meta charset="utf-8">
+</head>
+<body>
+  <%= yield %>
+  <p>
+    Atentamente,
+    <br>
+    El equipo de <%= link_to "sudamos.es", root_url %>
+  </p>
+</body>
+</html>

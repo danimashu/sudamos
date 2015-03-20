@@ -1,0 +1,402 @@
+/*
+ *= require custom_bootstrap/custom_bootstrap
+ */
+
+@import "custom_bootstrap/custom_bootstrap";
+
+
+/* GENERAL TAGS */
+
+body {
+  margin-top:65px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 1.2em 0 0.7em;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
+  text-align: center;
+  &.default {
+    background-color: @gray-broken;
+    border-top: 3px solid @gray;
+    padding:12px 12px 10px;
+  }
+  &.primary {
+    background-color: @gray-broken;
+    border-top: 3px solid @primary-color;
+    padding:12px 12px 10px;
+  }
+  &.comp {
+    background-color: @gray-broken;
+    border-top: 3px solid @comp-color;
+    padding:12px 12px 10px;
+  }
+}
+
+p {
+  margin: 0.7em 0;
+}
+
+.help-block {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.well {
+  h3 {
+    margin-top: 0.4em;
+  }
+}
+
+.btn-primary-inverse {
+  background-color: transparent;
+  color: @brand-primary;
+  border-color: @brand-primary;
+  &:hover {
+    background-color: transparent;
+    color: darken(@brand-primary, 10%);
+    border-color: darken(@brand-primary, 10%);
+  }
+}
+
+.btn-facebook {
+  background-color: @facebook-color;
+  color: #FFF;
+  border-color: @facebook-color;
+  &:hover {
+    background-color: darken(@facebook-color, 10%);
+    color: #FFF;
+    border-color: darken(@facebook-color, 10%);
+  }
+}
+
+.btn-comp {
+  background-color: @comp-color;
+  color: #FFF;
+  border-color: darken(@comp-color, 5%);
+  &:hover {
+    background-color: darken(@comp-color, 10%);
+    color: #FFF;
+    border-color: darken(@comp-color, 15%);
+  }
+}
+
+.btn-comp-inverse {
+  background-color: transparent;
+  color: @comp-color;
+  border-color: @comp-color;
+  &:hover {
+    background-color: transparent;
+    color: darken(@comp-color, 10%);
+    border-color: darken(@comp-color, 10%);
+  }
+}
+
+/* MINI FRAMEWORK */
+
+hr { margin: @grid-gutter-width 0;border-top:1px solid @default-border-color;border-bottom:1px solid #FFF;}
+hr.sm { margin: (@grid-gutter-width/2) 0; }
+hr.zero { margin: 0px 0; }
+hr.space { border-top: 0; border-bottom: 0; margin: (@grid-gutter-width / 2) 0; .clearfix; }
+hr.space-sm { border-top: 0; border-bottom: 0; margin: (@grid-gutter-width / 4) 0; .clearfix; }
+hr.space-xs { border-top: 0; border-bottom: 0; margin: (@grid-gutter-width / 8) 0; .clearfix; }
+.full-width { width: 100%; }
+.lg { font-size: @font-size-large; }
+.line-left { border-left: 1px solid @default-border-color; }
+
+/* PROJECT SPECIFIC */
+
+html {
+  font-size: 10px;
+}
+
+nav.navbar {
+  #logo {
+    font-size: 30px;
+    font-weight: 600;
+    img {
+      margin-top:-3px;
+      width:145px;
+    }
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+
+  .navbar-btn {
+    margin-left: 10px;
+  }
+}
+
+#teaser {
+  background: image-url("background.jpg") 0px 0px repeat #333;
+  padding: 2rem 0 1.9rem;
+  border-bottom:1px solid @default-border-color;
+  text-align: center;
+
+  h1 {
+    color: #FFF;
+    margin: 0.5em 0;
+  }
+}
+
+#teaser-home {
+  font-size: 5px;
+  @media (min-width: @screen-sm-min) { font-size: 8px; }
+  @media (min-width: @screen-md-min) { font-size: 9px; }
+  @media (min-width: @screen-lg-min) { font-size: 10px; }
+
+  background: image-url("background.jpg") 0px 0px repeat #333;
+  padding: 9em 0 5em 0;
+  h1, h2 { margin: 0px; }
+  h1 {
+    color: #FFF;
+    font-size:6.2em;
+    margin-bottom:0;
+    letter-spacing:0.04em;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.4em;
+    max-width: 750px;
+    margin: 0.5em auto 0;
+    color: #FFF;
+    font-weight: 400;
+  }
+  .buttons {
+    margin-top: 4em;
+  }
+  .btn {
+    padding: 1em 1.2em;
+    color: #FFF;
+    border-color: #FFF;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0.2em 1em;
+    font-size: 1.6em;
+  }
+}
+
+#main {
+  padding: 4rem 0;
+}
+
+footer {
+  background-color: @gray-broken;
+  margin-top:4rem;
+  padding:4rem 0 0.4rem 0;
+  border-top:1px solid @default-border-color;
+
+  .social { margin-top: 6rem; }
+  #last-footer { margin-top: 2rem; }
+
+  #cookies {
+    .text-muted;
+    font-size: 11px;
+  }
+}
+
+/*-------------------------*/
+/*  ADVERTS                */
+/*-------------------------*/
+
+.padded {
+  padding: 0.3rem 0.8rem;
+  .clearfix;
+}
+
+.advert-show .advert-wrap {
+  .make-sm-column(12);
+  .make-lg-column(6);
+}
+
+.article-show .advert-wrap {
+  .make-sm-column(12);
+}
+
+.advert-wrap {
+  .make-sm-column(6);
+  .make-lg-column(4);
+
+  margin-bottom: @grid-gutter-width;
+
+  .advert {
+    border-radius: @border-radius-large;
+    border: 1px solid @default-border-color;
+    img {
+      .border-top-radius(@border-radius-large);
+      .full-width;
+    }
+    .inbox {
+      .text-center;
+      background-color: @gray-broken;
+      padding: 0.8rem @grid-gutter-width/10 0.6rem;
+    }
+    .title {
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.2em;
+      color: @text-color;
+    }
+  }
+}
+
+.not-active {
+  display: none;
+}
+
+tr.advert {
+  .show-hover { display: none; }
+  &:hover .show-hover { display: block; }
+}
+
+/*-------------------------*/
+/*  ARTICLE                */
+/*-------------------------*/
+
+.articles-list .article-wrap {
+  .make-sm-column(6);
+  .make-lg-column(4);
+}
+
+.article-wrap {
+  .make-xs-column(12);
+  margin-bottom: @grid-gutter-width;
+  .article {
+    img { .full-width; }
+    .title {
+      .opacity(0.8);
+      .text-center;
+      background-color: #000;
+      padding: 0.8rem 1rem 0.6rem;
+      color: #FFF;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: absolute;
+      bottom: 0px;
+      left: @grid-gutter-width / 2;
+      width: calc(~'(100% - @{grid-gutter-width})');
+      line-height: 1.2em;
+    }
+  }
+}
+
+.article-body {
+  h2 { margin: 1.8em 0 0.7em; }
+  p {
+    margin: 1em 0;
+    font-size: @font-size-large;
+    &.media-footer { font-size: @font-size-small; margin-top: -1.5em; .text-muted; }
+    img { margin: 0.6em 0; }
+  }
+  img {
+    margin: 1.6em 0;
+  }
+  blockquote {
+    float: right;
+    width:47%;
+    margin-left: 4%;
+    padding: 3px 0px 0px 3%;
+    p { margin: 0.4em 0; }
+  }
+}
+
+#disqus_thread {
+  margin-top: @grid-gutter-width * 3;
+}
+
+/*-------------------------*/
+/*  CONTACTS               */
+/*-------------------------*/
+
+#contact-newsletter-label {
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+/*-------------------------*/
+/*  SUBSCRIBERS            */
+/*-------------------------*/
+
+#subscriber-form {
+  .well;
+  text-align: center;
+  h3 {
+    margin-top: 0.4em;
+  }
+}
+
+/*-------------------------*/
+/*  SEARCHER               */
+/*-------------------------*/
+
+#searcher div.select {
+  &, & select { .full-width; }
+  margin-top: 13px;
+}
+
+/*-------------------------*/
+/*  SOCIAL                 */
+/*-------------------------*/
+
+.social {
+  a {
+    border-radius: 30px;
+    font-size:32px;
+    padding:10px 1px 2px 3px;
+    margin: 0px 2px;
+    background-color: @gray;
+    .transition(background-color 0.1s linear);
+  }
+  .twitter { background-color: #4099FF; }
+  .facebook { background-color: @facebook-color; }
+  .google { background-color: #dd4b39; }
+}
+
+/*----------------------*/
+/*  EMBED               */
+/*----------------------*/
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  margin: 2em 0;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------*/
+/*  CHECKBOX               */
+/*-------------------------*/
+
+// input[type=checkbox] { display:none; }
+// input[type=checkbox] + label:before {
+//   font-family: FontAwesome;
+//   display: inline-block;
+// }
+// input[type=checkbox] + label:before { content: "\f096"; }
+// input[type=checkbox] + label:before { letter-spacing: 4px; }
+// input[type=checkbox]:checked + label:before { content: "\f046"; }
+// input[type=checkbox]:checked + label:before { letter-spacing: 2px; }

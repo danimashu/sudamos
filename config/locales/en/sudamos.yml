@@ -1,0 +1,124 @@
+en:
+  #######################################################################
+  ## Common strings
+  #######################################################################
+
+  renew: Renew
+  edit: Edit
+  manage_images: Manage images
+  remove: Remove
+  are_you_sure: Are you sure?
+  finish: Finish publication
+  hello: Hello
+  published: "Published:"
+  ago: "%{time_ago} ago"
+  expire: "Expire:"
+  in: "in %{time}"
+  viewed_listed: "Times viewed/listed:"
+  for_sell: For sell
+  for_buy: For buy
+  select_section: Select a section...
+  select_state: Select a state...
+  select_sport: Select a sport...
+  create_advert: "Create an advert GRATIS!"
+  back: Back
+  interested: "Interested:"
+  message: message
+  nobody_contacted_yet: Nobody contacted yet
+  create_abuse: This is an abuse
+  accept: "I accept the %{terms} and the %{privacy}."
+  terms: Terms and conditions
+  privacy: Privacy policy
+  main_image: Main image
+  set_as_main: Set as main
+
+  #######################################################################
+  ## Menus
+  #######################################################################
+
+  menu:
+    default:
+      adverts: Adverts
+      home: Home
+      user: My Account
+    submenu:
+      faq: Faq
+      contact_with_us: Contact with us
+      terms: Terms and conditions
+      privacy: Privacy policy
+
+  #######################################################################
+  ## Mailer
+  #######################################################################
+
+  mailer:
+    subject:
+      contact_with_advert: Someone is interested in your Sudamos advert
+      inform_advert_near_to_expire: Your advert is near to expire
+
+  #######################################################################
+  ## View specific
+  #######################################################################
+
+  # Admin
+  admin:
+    # Adverts
+    adverts:
+      index:
+        title: Adverts to revise
+
+  # Adverts
+  adverts:
+    index:
+      new: New advert
+      title: "%{num} finded adverts"
+
+  # Contacts
+  contacts:
+    new:
+      title: Contact with the owner
+
+  # Feedbacks
+  feedbacks:
+    new:
+      title: Say us something
+
+  # User
+  user:
+    # Adverts
+    adverts:
+      index:
+        new: New advert
+        title: My adverts
+      new:
+        title: New advert
+      edit:
+        title: Edit advert
+    # Attachments
+    attachments:
+      index:
+        new: New image
+        title: Images list
+      new:
+        title: New image
+    contacts:
+      index:
+        title: Contacts list
+
+
+  #######################################################################
+  ## Submit buttons
+  #######################################################################
+
+  helpers:
+    submit:
+      advert:
+        create: Next step
+      attachment:
+        create: Upload image
+      contact:
+        create: Send
+      feedback:
+        create: Send
+      search:
+        create: Search

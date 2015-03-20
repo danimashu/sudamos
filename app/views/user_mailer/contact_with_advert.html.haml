@@ -1,0 +1,11 @@
+%p
+  Hola #{@user.name},
+%p
+  alguien se ha interesado en el anuncio #{link_to @advert.title, advert_url(@advert)}.
+%p
+  %strong Email:
+  = @contact.email
+%p
+  %strong Mensaje
+  %br
+  = simple_format @contact.message

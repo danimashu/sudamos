@@ -1,0 +1,20 @@
+%hr
+.row[advert]
+  .col-xs-8
+    %strong.lg= link_to advert.title, [advert], target: "_blank"
+    .text-muted.small
+      = icon "clock-o"
+      = l(advert.created_at.to_date, format: :long)
+      |
+      = times_visited_for advert
+  .col-xs-4.text-right
+    = contacts_for advert
+    %span.dropdown
+      %a.btn.btn-sm.btn-default.dropdown-toggle{"data-toggle" => "dropdown"}
+        = icon "bars"
+        = icon "caret-down"
+      %ul.dropdown-menu.pull-right{role: "menu"}
+        %li= link_with_icon t("renew"), [:renew, :user, advert], "", "refresh fa-fw"
+        %li= link_with_icon t("edit"), [:edit, :user, advert], "", "edit fa-fw"
+        %li= link_with_icon t("manage_images"), [:user, advert, :attachments], "", "camera-retro fa-fw"
+        %li= remove_link t("remove"), [:retire, :user, advert], "", "trash-o fa-fw"

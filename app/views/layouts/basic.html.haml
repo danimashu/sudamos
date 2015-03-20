@@ -1,0 +1,6 @@
+= content_for :content do
+  .row
+    .col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+      = render_flash
+      = yield
+= render template: "layouts/application"

@@ -1,0 +1,48 @@
+es:
+  #######################################################################
+  ## Model labels
+  #######################################################################
+
+  activerecord:
+    models:
+      advert: Anuncio
+      attachment: Imagen
+      contact: Contacto
+      state: Provincia
+      section: Sección
+      sport: Deporte
+    attributes:
+      advert:
+        title: Título del anuncio
+        description: Descripción
+        price: Precio
+        phone: Teléfono
+        state: Provincia
+        section: Sección
+        sport: Deporte
+      attachment:
+        image: Imagen
+      contact:
+        created_at: Fecha
+        email: Email
+        message: Mensaje
+      user:
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        remember_me: Recordarme
+        professional: "Soy un:"
+        name: "Nombre, nick o nombre de empresa"
+        state: Provincia
+        address: Dirección
+        phone: Teléfono
+        company_description: Información de la empresa
+
+  #######################################################################
+  ## Error messages
+  #######################################################################
+
+  errors:
+    messages:
+      only_images: archivo erróneo, sólo se permiten imágenes
+      max_attachments: "no se pueden añadir más imágenes"
