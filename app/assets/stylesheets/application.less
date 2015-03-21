@@ -5,7 +5,9 @@
 @import "custom_bootstrap/custom_bootstrap";
 
 
-/* GENERAL TAGS */
+/*-------------------------*/
+/*  GENERAL TAGS           */
+/*-------------------------*/
 
 body {
   margin-top:65px;
@@ -99,7 +101,9 @@ p {
   }
 }
 
-/* MINI FRAMEWORK */
+/*-------------------------*/
+/*  MINI-FRAMEWORK         */
+/*-------------------------*/
 
 hr { margin: @grid-gutter-width 0;border-top:1px solid @default-border-color;border-bottom:1px solid #FFF;}
 hr.sm { margin: (@grid-gutter-width/2) 0; }
@@ -111,7 +115,9 @@ hr.space-xs { border-top: 0; border-bottom: 0; margin: (@grid-gutter-width / 8) 
 .lg { font-size: @font-size-large; }
 .line-left { border-left: 1px solid @default-border-color; }
 
-/* PROJECT SPECIFIC */
+/*-------------------------*/
+/*  PROJECT SPECIFIC       */
+/*-------------------------*/
 
 html {
   font-size: 10px;
@@ -355,7 +361,7 @@ tr.advert {
   a {
     border-radius: 30px;
     font-size:32px;
-    padding:10px 1px 2px 3px;
+    padding:6px 1px 0px 3px;
     margin: 0px 2px;
     background-color: @gray;
     .transition(background-color 0.1s linear);
@@ -386,17 +392,3 @@ tr.advert {
   width: 100%;
   height: 100%;
 }
-
-/*-------------------------*/
-/*  CHECKBOX               */
-/*-------------------------*/
-
-// input[type=checkbox] { display:none; }
-// input[type=checkbox] + label:before {
-//   font-family: FontAwesome;
-//   display: inline-block;
-// }
-// input[type=checkbox] + label:before { content: "\f096"; }
-// input[type=checkbox] + label:before { letter-spacing: 4px; }
-// input[type=checkbox]:checked + label:before { content: "\f046"; }
-// input[type=checkbox]:checked + label:before { letter-spacing: 2px; }
