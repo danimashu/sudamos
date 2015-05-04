@@ -42,8 +42,10 @@ if Rails.env.development?
       lg_url = "http://lorempixel.com/700/450/sports/#{rand}/"
       md_url = "http://lorempixel.com/360/200/sports/#{rand}/"
       sm_url = "http://lorempixel.com/48/48/sports/#{rand}/"
-      FactoryGirl.create :attachment, advert: advert,
-        lg_url: lg_url, md_url: md_url, sm_url: sm_url
+      2.times do
+        FactoryGirl.create :attachment, advert: advert,
+          lg_url: lg_url, md_url: md_url, sm_url: sm_url
+      end
     end
   end
 
