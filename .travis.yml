@@ -1,5 +1,5 @@
 language: ruby
 rvm:
-  - "2.1.5"
+  - "2.2.2"
 before_script: bundle exec rake db:create db:migrate
 script: xvfb-run bundle exec rspec spec
