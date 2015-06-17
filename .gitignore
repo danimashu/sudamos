@@ -7,3 +7,4 @@ public/assets/
 *.DS_store
 config/application.yml
 .rvmrc
+coverage/

@@ -73,5 +73,5 @@ group :test do
   gem "shoulda"
   gem "timecop"
   gem "turnip"
-  gem "codeclimate-test-reporter", group: :test, require: nil
+  gem "codeclimate-test-reporter", require: nil
 end

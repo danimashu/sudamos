@@ -1,42 +1,43 @@
-admin_user:
-admin_password:
+# All the keys in this file are called from the code using i.e. Figaro.env.admin_user!
 
-devise_secret_key:
-rollbar_access_token:
-new_relic_license_key:
-transloadit_auth_key:
-transloadit_auth_secret:
-transloadit_templates_s3_store:
+ADMIN_USER:
+ADMIN_PASSWORD:
+DEVISE_SECRET_KEY:
+TRANSLOADIT_AUTH_KEY:
+TRANSLOADIT_AUTH_SECRET:
+TRANSLOADIT_TEMPLATES_S3_STORE:
+ROLLBAR_ACCESS_TOKEN:
+NEW_RELIC_LICENSE_KEY:
 
 development:
-  secret_key_base:
-  fb_client_id:
-  fb_client_secret:
+  SECRET_KEY_BASE:
+  FB_CLIENT_ID:
+  FB_CLIENT_SECRET:
 
 test:
-  secret_key_base:
-  fb_client_id:
-  fb_client_secret:
+  SECRET_KEY_BASE:
+  FB_CLIENT_ID:
+  FB_CLIENT_SECRET:
 
 staging:
-  secret_key_base:
-  fb_client_id:
-  fb_client_secret:
-  aws_access_key_id:
-  aws_secret_access_key:
-  fog_directory:
-  mandrill_username:
-  mandrill_password:
+  SECRET_KEY_BASE:
+  FB_CLIENT_ID:
+  FB_CLIENT_SECRET:
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
+  FOG_DIRECTORY:
+  MANDRILL_USERNAME:
+  MANDRILL_PASSWORD:
 
 production:
-  secret_key_base:
-  fb_client_id:
-  fb_client_secret:
-  aws_access_key_id:
-  aws_secret_access_key:
-  fog_directory:
-  transloadit_auth_key:
-  transloadit_auth_secret:
-  transloadit_templates_s3_store:
-  mandrill_username:
-  mandrill_password:
+  SECRET_KEY_BASE:
+  FB_CLIENT_ID:
+  FB_CLIENT_SECRET:
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
+  FOG_DIRECTORY:
+  TRANSLOADIT_AUTH_KEY:
+  TRANSLOADIT_AUTH_SECRET:
+  TRANSLOADIT_TEMPLATES_S3_STORE:
+  MANDRILL_USERNAME:
+  MANDRILL_PASSWORD:
