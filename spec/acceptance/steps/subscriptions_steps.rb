@@ -10,4 +10,4 @@ module SubscriptionsSteps
   end
 end
 
-RSpec.configure{ |c| c.include SubscriptionsSteps }
+RSpec.configure { |c| c.include SubscriptionsSteps }

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe SubscribersController do
   describe "on POST to create" do

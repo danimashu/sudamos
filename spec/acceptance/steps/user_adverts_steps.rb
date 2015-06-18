@@ -10,7 +10,7 @@ module UserAdvertsSteps
   end
 
   step "the user can add images" do
-    # TODO add images
+    # TODO: add images
     click_link "Finalizar"
   end
 
@@ -39,7 +39,7 @@ module UserAdvertsSteps
   end
 
   step "the user can edit the images" do
-    # TODO images
+    # TODO: images
   end
 
   step "the user can retire the advert" do
@@ -72,7 +72,6 @@ module UserAdvertsSteps
     end
     page.should have_content("You have renewed your advert.")
   end
-
 end
 
-RSpec.configure{ |c| c.include UserAdvertsSteps }
+RSpec.configure { |c| c.include UserAdvertsSteps }

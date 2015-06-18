@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Sudamos::CronedTasks do
   describe "inform near to expire advert" do

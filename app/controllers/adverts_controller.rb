@@ -2,8 +2,8 @@ class AdvertsController < InheritedResources::Base
   set_tab :adverts
   actions :index, :show
 
-  before_filter :increment_viewed_count, only: :show
-  before_filter :load_adverts, only: :index
+  before_action :increment_viewed_count, only: :show
+  before_action :load_adverts, only: :index
 
   def searcher
     state = params[:q][:state_search_term_eq]

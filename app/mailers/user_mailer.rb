@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default from: "\"sudamos.es\" <hola@sudamos.es>"
   layout "email"
 
-  def contact_with_advert contact
+  def contact_with_advert(contact)
     @contact = contact
     @advert = contact.advert
     @user = @advert.user
@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
          subject: t("mailer.subject.contact_with_advert", title: @advert.title)
   end
 
-  def contact_with_user contact
+  def contact_with_user(contact)
     @contact = contact
     @user = contact.user
 
@@ -21,7 +21,7 @@ class UserMailer < ActionMailer::Base
          subject: t("mailer.subject.contact_with_user")
   end
 
-  def inform_advert_near_to_expire advert
+  def inform_advert_near_to_expire(advert)
     @advert = advert
     @user = @advert.user
 
@@ -29,7 +29,7 @@ class UserMailer < ActionMailer::Base
          subject: t("mailer.subject.inform_advert_near_to_expire")
   end
 
-  def inform_posibility_of_renew advert
+  def inform_posibility_of_renew(advert)
     @advert = advert
     @user = @advert.user
 
@@ -37,7 +37,7 @@ class UserMailer < ActionMailer::Base
          subject: t("mailer.subject.inform_posibility_of_renew")
   end
 
-  def inform_advert_without_image advert
+  def inform_advert_without_image(advert)
     @advert = advert
     @user = @advert.user
 

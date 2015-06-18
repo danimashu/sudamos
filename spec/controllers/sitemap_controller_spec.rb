@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe SitemapController do
   describe "on GET to sitemap" do

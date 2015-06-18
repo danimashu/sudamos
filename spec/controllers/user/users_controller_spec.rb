@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe User::UsersController do
   before do
@@ -6,7 +6,7 @@ describe User::UsersController do
   end
 
   context "while logged in" do
-    before{ sign_in @user }
+    before { sign_in @user }
 
     describe "on GET to edit" do
       before { get :edit }
@@ -22,7 +22,7 @@ describe User::UsersController do
   context "while not logged in" do
     describe "on GET to edit" do
       before { get :edit }
-      it {should redirect_to(new_user_session_path)}
+      it { should redirect_to(new_user_session_path) }
     end
   end
 end

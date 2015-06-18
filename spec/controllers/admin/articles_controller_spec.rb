@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Admin::ArticlesController do
   let(:article) { create :article }
@@ -20,7 +20,6 @@ describe Admin::ArticlesController do
       before { get :edit, id: article.id }
       it { should respond_with(:success) }
     end
-
   end
 
   context "while not logged in" do
@@ -29,5 +28,4 @@ describe Admin::ArticlesController do
       it { should respond_with(:unauthorized) }
     end
   end
-
 end

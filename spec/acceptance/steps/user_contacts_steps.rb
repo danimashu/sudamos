@@ -21,7 +21,7 @@ module UserContactsSteps
     page.should have_css("##{dom_id(@contact)}")
     page.should_not have_css("##{dom_id(@contact_user)}")
   end
-  
+
   step "the user can mark as read the contact" do
     click_link "Marcar como leído"
     page.should have_content @contact.message
@@ -29,4 +29,4 @@ module UserContactsSteps
   end
 end
 
-RSpec.configure{ |c| c.include UserContactsSteps }
+RSpec.configure { |c| c.include UserContactsSteps }

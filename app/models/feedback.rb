@@ -9,7 +9,7 @@ class Feedback < MailForm::Base
       subject: "Mensaje desde sudamos.es",
       to: "hola@sudamos.es",
       from: "hola@sudamos.es",
-      reply_to: self.email
+      reply_to: email
     }
   end
 end

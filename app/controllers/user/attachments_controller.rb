@@ -9,38 +9,40 @@ class User::AttachmentsController < User::Base
   end
 
   def create
-    begin
-      decoded_response = decoded_transloadit_json
+    @attachment = parent.attachments.new(params[:attachment])
 
-      @attachment = parent.attachments.new(params[:attachment])
-      @attachment.transloadit_response = params[:transloadit]
-      @attachment.lg_url = decoded_response[:results][:lg].first[:url]
-      @attachment.md_url = decoded_response[:results][:md].first[:url]
-      @attachment.sm_url = decoded_response[:results][:sm].first[:url]
+    transloadit_assignments
 
-      create! do |success, failure|
-        failure.html { render "index" }
-      end
-    rescue => e
-      Rollbar.error(e)
-      redirect_to [:user, parent, :attachments],
-        alert: t("flash.attachments.create.alert")
+    create! do |_success, failure|
+      failure.html { render "index" }
     end
+  rescue => e
+    Rollbar.error(e)
+    redirect_to [:user, parent, :attachments],
+                alert: t("flash.attachments.create.alert")
   end
 
   def main
     resource.main_image!
     redirect_to [:user, parent, :attachments],
-      notice: t("flash.attachments.main.notice")
+                notice: t("flash.attachments.main.notice")
   end
 
   protected
 
   def decoded_transloadit_json
-    if params[:transloadit].present?
-      ActiveSupport::HashWithIndifferentAccess.new(
-        ActiveSupport::JSON.decode params[:transloadit]
-      )
-    end
+    return if params[:transloadit].blank?
+    ActiveSupport::HashWithIndifferentAccess.new(
+      ActiveSupport::JSON.decode params[:transloadit]
+    )
+  end
+
+  def transloadit_assignments
+    decoded_response = decoded_transloadit_json
+
+    @attachment.transloadit_response = params[:transloadit]
+    @attachment.lg_url = decoded_response[:results][:lg].first[:url]
+    @attachment.md_url = decoded_response[:results][:md].first[:url]
+    @attachment.sm_url = decoded_response[:results][:sm].first[:url]
   end
 end

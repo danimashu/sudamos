@@ -1,6 +1,6 @@
 class Abuse < ActiveRecord::Base
   attr_accessible
-  validates_presence_of :advert_id
+  validates :advert_id, presence: true
 
   belongs_to :advert, counter_cache: true
 end

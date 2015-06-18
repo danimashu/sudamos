@@ -1,24 +1,22 @@
-ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
-require 'rspec/autorun'
+require "rspec/rails"
+require "rspec/autorun"
 
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
-require 'email_spec'
-require 'shoulda'
-require 'shoulda/matchers/integrations/rspec'
-require 'turnip/capybara'
+require "email_spec"
+require "shoulda"
+require "shoulda/matchers/integrations/rspec"
+require "turnip/capybara"
 
 require "support/helpers"
 
 Dir[Rails.root.join("spec/acceptance/steps/*_steps.rb")].each { |f| require f }
 
 Capybara.register_driver :webkit do |app|
-  Capybara::Webkit::Driver.new(app).tap do |driver|
-    driver.block_unknown_urls
-  end
+  Capybara::Webkit::Driver.new(app).tap(&:block_unknown_urls)
 end
 
 Capybara.default_driver = :webkit

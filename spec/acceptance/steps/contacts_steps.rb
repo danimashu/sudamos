@@ -31,4 +31,4 @@ module ContactsSteps
   end
 end
 
-RSpec.configure{ |c| c.include ContactsSteps }
+RSpec.configure { |c| c.include ContactsSteps }

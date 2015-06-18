@@ -13,4 +13,4 @@ module SharingSteps
   end
 end
 
-RSpec.configure{ |c| c.include SharingSteps }
+RSpec.configure { |c| c.include SharingSteps }

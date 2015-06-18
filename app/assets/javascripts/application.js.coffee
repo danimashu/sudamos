@@ -5,9 +5,9 @@
 #= require_tree .
 
 $ ->
-  $('.tooltiped').tooltip()
-  $('.buttoned').click ->
-    $('.buttoned').button('loading')
+  $(".tooltiped").tooltip()
+  $(".buttoned").click ->
+    $(".buttoned").button('loading')
 
   window.setTimeout (->
     $(".alert-dismissable").fadeTo(500, 0).slideUp 500, ->

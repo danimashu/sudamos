@@ -1,5 +1,5 @@
 $ ->
-  $('#fileupload').fileupload
+  $("#fileupload").fileupload
     dataType: "script"
     add: (e, data) ->
       types = /(\.|\/)(jpe?g|png)$/i
@@ -11,9 +11,9 @@ $ ->
       else
         data.submit()
     start: ->
-      $('.progress').fadeIn()
+      $(".progress").fadeIn()
     always: ->
-      $('.progress').fadeOut()
+      $(".progress").fadeOut()
     progress: (e, data) ->
       progress = parseInt(data.loaded / data.total * 100, 10)
-      $('.progress-bar').css('width', progress + '%')
+      $(".progress-bar").css("width", progress + "%")

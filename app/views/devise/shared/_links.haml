@@ -1,7 +1,7 @@
 %ul.list-unstyled.small
-  - if devise_mapping.recoverable? && controller_name != 'passwords'
+  - if devise_mapping.recoverable? && controller_name != "passwords"
     %li= link_to t("devise.passwords.link"), new_password_path(resource_name)
-  - if devise_mapping.confirmable? && controller_name != 'confirmations'
+  - if devise_mapping.confirmable? && controller_name != "confirmations"
     %li= link_to t("devise.confirmations.link"), new_confirmation_path(resource_name)
-- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != "unlocks"
   = link_to t("devise.unlocks.link"), new_unlock_path(resource_name)

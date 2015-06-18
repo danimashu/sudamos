@@ -2,7 +2,7 @@ class Admin::UsersController < InheritedResources::Base
   set_tab :admin
   set_tab :users, :admin
   actions :index
-  before_filter :authenticate!
+  before_action :authenticate!
 
   def become
     sign_in(:user, resource)

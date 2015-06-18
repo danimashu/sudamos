@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Contact do
   %w(email message newsletter).each do |attr|
@@ -10,11 +10,11 @@ describe Contact do
     it { should validate_presence_of(attr) }
   end
 
-  %w{abc @abc.com a@.com @c0m}.each do |string|
+  %w(abc @abc.com a@.com @c0m).each do |string|
     it { should_not allow_value(string).for(:email) }
   end
 
-  %w{example@example.com 1a@a.com a@2a.net}.each do |string|
+  %w(example@example.com 1a@a.com a@2a.net).each do |string|
     it { should allow_value(string).for(:email) }
   end
 

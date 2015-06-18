@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Attachment do
   subject { create :attachment }
@@ -10,11 +10,6 @@ describe Attachment do
   it { should belong_to(:advert) }
 
   before { @advert = create :advert }
-
-  # describe "#image_file_name" do
-  #   before { @attachment = create :attachment, advert: @advert }
-  #   it { @attachment.image.url.should include("#{@advert.slug}.jpg") }
-  # end
 
   describe "max attachments" do
     before { create_list :attachment, MAX_ATT, advert: @advert.reload }
@@ -37,7 +32,7 @@ describe Attachment do
     end
 
     context "after another main image" do
-      before {@att2.main_image!}
+      before { @att2.main_image! }
 
       it "should become to the main image" do
         @att1.reload.main?.should be_false
@@ -45,5 +40,4 @@ describe Attachment do
       end
     end
   end
-
 end

@@ -16,13 +16,21 @@ class ApplicationController < ActionController::Base
   end
 
   def devise_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:professional, :name,
-      :state_id, :address, :phone, :company_description, :terms]
+    devise_parameter_sanitizer.for(:sign_up) << [
+      :professional,
+      :name,
+      :state_id,
+      :address,
+      :phone,
+      :company_description,
+      :terms
+    ]
   end
 
   def authenticate!
     authenticate_or_request_with_http_basic do |username, password|
-      username == Figaro.env.admin_user! && password == Figaro.env.admin_password!
+      username == Figaro.env.admin_user! &&
+        password == Figaro.env.admin_password!
     end
   end
 end

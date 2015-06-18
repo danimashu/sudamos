@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe State do
   it { should have_many(:adverts) }

@@ -1,12 +1,12 @@
-= content_for :meta_title, adverts_title_text(collection)
-- set_meta_tags description: adverts_description_text(collection)
+= content_for :meta_title, adverts_title_text
+- set_meta_tags description: adverts_description_text
 
 = content_for :teaser do
   #teaser
     .container
       .row
         .col-sm-9
-          %h1.text-left= adverts_title_text(collection)
+          %h1.text-left= adverts_title_text
         .col-sm-3
           = render("searcher")
 

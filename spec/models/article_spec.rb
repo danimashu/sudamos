@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Article do
   %w(title teaser body published thumbnail_link).each do |attr|

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Advert do
   %w(sport_id state_id section_id title description price sell phone).each do |attr|
@@ -25,7 +25,6 @@ describe Advert do
   it { should have_many(:contacts) }
   it { should have_many(:abuses) }
 
-
   before do
     @advert = create :advert
     @advert.reload
@@ -35,12 +34,13 @@ describe Advert do
   its(:viewed_count) { should eq(0) }
   its(:renewed_at) { should eq(@advert.created_at) }
 
-
   # RENEW METHOD
 
   describe "#renew!" do
     context "after create advert late enought" do
-      before { Timecop.travel((RENEW_INTERVAL * 2).seconds.from_now) {@advert.renew!} }
+      before do
+        Timecop.travel((RENEW_INTERVAL * 2).seconds.from_now) { @advert.renew! }
+      end
 
       it "should allow the renew" do
         @advert.renewed_at.should_not eq(@advert.created_at)
@@ -48,7 +48,9 @@ describe Advert do
     end
 
     context "after create the advert but too soon" do
-      before { Timecop.travel((RENEW_INTERVAL * 0.5).seconds.from_now) {@advert.renew!} }
+      before do
+        Timecop.travel((RENEW_INTERVAL * 0.5).seconds.from_now) { @advert.renew! }
+      end
 
       it "should not allow the renew" do
         @advert.renewed_at.should eq(@advert.created_at)
@@ -78,13 +80,11 @@ describe Advert do
     end
   end
 
-
   # ACTIVE SCOPE - SENSIBLE UPDATED AT - CHECKED BOOL
 
   describe ".active" do
     pending
   end
-
 
   # RENEWED AT DAY / CREATED AT DAY / EXPIRED SCOPES
 
@@ -147,7 +147,6 @@ describe Advert do
       Advert.created_at_day(2.day.ago).should include(@advert2)
     end
   end
-
 
   # IMAGE SCOPES
 

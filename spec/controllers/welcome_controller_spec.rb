@@ -1,7 +1,6 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe WelcomeController do
-
   describe "on GET to home" do
     before { get :home }
     it { should respond_with(:success) }
@@ -11,5 +10,4 @@ describe WelcomeController do
     before { get :homebike }
     it { should respond_with(:success) }
   end
-
 end

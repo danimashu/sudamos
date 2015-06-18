@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe AdvertsController do
   let(:advert) { create :advert }

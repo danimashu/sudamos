@@ -22,7 +22,7 @@ class Advert < ActiveRecord::Base
   delegate :name, to: :state, prefix: :state
 
   def main_attachment
-    self.attachments.where(main: true).first || self.attachments.first
+    attachments.find_by_main(true) || attachments.first
   end
 
   scope :renewed_at_day, lambda { |date|
@@ -49,18 +49,17 @@ class Advert < ActiveRecord::Base
   after_create :set_date_fields
 
   def renew!
-    if RENEW_INTERVAL.ago > renewed_at
-      self.update_attribute :renewed_at, Time.now
-    end
+    return unless RENEW_INTERVAL.ago > renewed_at
+    update_attribute :renewed_at, Time.zone.now
   end
 
   def retire!
-    self.update_attribute :retired, true
+    update_attribute :retired, true
   end
 
   protected
 
   def set_date_fields
-    self.update_attribute :renewed_at, created_at
+    update_attribute :renewed_at, created_at
   end
 end

@@ -1,7 +1,7 @@
 class UsersController < InheritedResources::Base
   actions :show
 
-  before_filter :load_adverts
+  before_action :load_adverts
 
   protected
 

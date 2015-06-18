@@ -5,7 +5,7 @@ class User::AdvertsController < User::Base
   actions :all, except: [:show, :destroy]
 
   def create
-    create! do |success, failure|
+    create! do |success, _failure|
       success.html { redirect_to [:user, resource, :attachments] }
     end
   end
@@ -14,8 +14,9 @@ class User::AdvertsController < User::Base
     if resource.renew!
       flash[:notice] = t("flash.adverts.renew.notice")
     else
-      flash[:alert] = t("flash.adverts.renew.alert",
-        until: distance_of_time_in_words_to_now(resource.renewed_at + RENEW_INTERVAL.seconds))
+      renovable_time  = resource.renewed_at + RENEW_INTERVAL.seconds
+      renovable_words = distance_of_time_in_words_to_now(renovable_time)
+      flash[:alert]   = t("flash.adverts.renew.alert", until: renovable_words)
     end
     redirect_to [:user, :adverts]
   end
@@ -34,5 +35,4 @@ class User::AdvertsController < User::Base
   def begin_of_association_chain
     current_user
   end
-
 end

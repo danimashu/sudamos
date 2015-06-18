@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Abuse do
   it { should_not allow_mass_assignment_of(:advert_id) }

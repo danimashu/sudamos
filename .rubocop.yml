@@ -1,0 +1,41 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - "spec/fixtures/**/*"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "config/**/*"
+    - "bin/*"
+  RunRailsCops: true
+  DisplayStyleGuide: true
+  DisplayCopNames: true
+
+Documentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Style/GuardClause:
+  MinBodyLength: 1
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/ClassAndModuleChildren:
+  Enabled: false

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe Admin::UsersController do
   let(:user) { create :user }
@@ -19,7 +19,7 @@ describe Admin::UsersController do
 
   context "while not logged in" do
     describe "on GET to index" do
-      before{ get :index }
+      before { get :index }
       it { should respond_with(:unauthorized) }
     end
 

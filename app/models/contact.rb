@@ -12,19 +12,17 @@ class Contact < ActiveRecord::Base
   scope :pending_read, -> { where(read: false) }
 
   def read!
-    self.update_attribute :read, true
+    update_attribute :read, true
   end
 
   protected
 
   def set_user_id
-    if self.advert.present?
-      self.update_attribute :user_id, self.advert.user.id
-    end
+    update_attribute :user_id, advert.user.id if advert.present?
   end
 
   def send_email
-    if self.advert.present?
+    if advert.present?
       UserMailer.contact_with_advert(self).deliver
     else
       UserMailer.contact_with_user(self).deliver

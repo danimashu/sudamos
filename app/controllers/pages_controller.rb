@@ -1,5 +1,5 @@
 class PagesController < HighVoltage::PagesController
-  before_filter :setting_tab
+  before_action :setting_tab
   layout "basic"
 
   protected

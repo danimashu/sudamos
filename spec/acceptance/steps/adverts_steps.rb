@@ -20,4 +20,4 @@ module AdvertsSteps
   end
 end
 
-RSpec.configure{ |c| c.include AdvertsSteps }
+RSpec.configure { |c| c.include AdvertsSteps }

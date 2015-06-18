@@ -23,4 +23,4 @@ module FactorySteps
   end
 end
 
-RSpec.configure{ |c| c.include FactorySteps }
+RSpec.configure { |c| c.include FactorySteps }

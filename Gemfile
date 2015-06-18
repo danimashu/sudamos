@@ -60,7 +60,7 @@ end
 
 group :development do
   gem "gem-open"
-  gem "powder"
+  gem "rubocop", require: false
 end
 
 group :test do

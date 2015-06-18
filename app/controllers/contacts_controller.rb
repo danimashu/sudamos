@@ -3,8 +3,10 @@ class ContactsController < InheritedResources::Base
   belongs_to :advert, :user, optional: true
 
   def create
-    create! do |success, failure|
-      failure.html { redirect_to [parent], alert: t("flash.contacts.create.alert") }
+    create! do |_success, failure|
+      failure.html do
+        redirect_to [parent], alert: t("flash.contacts.create.alert")
+      end
     end
   end
 end

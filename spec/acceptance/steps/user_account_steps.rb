@@ -92,10 +92,10 @@ module UserAccountSteps
   step "the user can sign in throught Facebook for an existing account" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
-        info: { email: @user.email },
-        provider: :facebook,
-        uid: "123456",
-        extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
+      info: { email: @user.email },
+      provider: :facebook,
+      uid: "123456",
+      extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
     )
     reset_mailer
 
@@ -109,10 +109,10 @@ module UserAccountSteps
   step "the user can sign in throught Facebook for a new account" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
-        info: { email: "alice@gmail.com" },
-        provider: :facebook,
-        uid: "123456",
-        extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
+      info: { email: "alice@gmail.com" },
+      provider: :facebook,
+      uid: "123456",
+      extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
     )
 
     click_link "Iniciar sesión"
@@ -124,10 +124,10 @@ module UserAccountSteps
   step "the user cannot sign in throught Facebook for not real email" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
-        info: { email: "invalid" },
-        provider: :facebook,
-        uid: "123456",
-        extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
+      info: { email: "invalid" },
+      provider: :facebook,
+      uid: "123456",
+      extra: { raw_info: { first_name: "Alice", last_name: "Ecila" } }
     )
 
     visit "/"
@@ -142,8 +142,9 @@ module UserAccountSteps
 
     click_link "Iniciar sesión"
     click_link "Iniciar sesión con Facebook"
-    page.should have_content("Could not authorize you from Facebook because \"Invalid credentials\"")
+    page.should have_content("Could not authorize you from Facebook
+                             because \"Invalid credentials\"")
   end
 end
 
-RSpec.configure{ |c| c.include UserAccountSteps }
+RSpec.configure { |c| c.include UserAccountSteps }
