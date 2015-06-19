@@ -37,12 +37,10 @@ gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4.1"
 gem "redcarpet"
 gem "simple_form"
 gem "tabs_on_rails"
+gem "figaro"
 
 gem "rollbar", "~> 1.4.4"
 gem "newrelic_rpm"
-
-gem "rack-timeout"
-gem "figaro"
 
 group :production do
   gem "unicorn"
@@ -66,6 +64,7 @@ end
 group :test do
   gem "capybara"
   gem "capybara-webkit"
+  gem "poltergeist"
   gem "database_cleaner"
   gem "email_spec"
   gem "fakeweb"
