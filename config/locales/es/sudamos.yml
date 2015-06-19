@@ -62,7 +62,7 @@ es:
   #######################################################################
   mailer:
     subject:
-      contact_with_advert: "Interesado en %{advert_title}"
+      contact_with_advert: "Interesado en %{title}"
       contact_with_user: Alguien te envía un mensaje desde sudamos.es
       inform_advert_near_to_expire: Tu anuncio está a punto de caducar
       inform_posibility_of_renew: Tu anuncio hace tiempo que no se renueva
