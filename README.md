@@ -1,12 +1,12 @@
+_This is a **legacy project**, not maintained anymore_
+
 [![Build Status](https://travis-ci.org/danimashu/sudamos.svg?branch=master)](https://travis-ci.org/danimashu/sudamos)
 [![Code Climate](https://codeclimate.com/github/danimashu/sudamos/badges/gpa.svg)](https://codeclimate.com/github/danimashu/sudamos)
 [![Test Coverage](https://codeclimate.com/github/danimashu/sudamos/badges/coverage.svg)](https://codeclimate.com/github/danimashu/sudamos)
 
 [![Sudamos logo](app/assets/images/sudamos.png)](http://www.sudamos.es/)
 
-Sudamos is a simple Ruby on Rails P2P marketplace focussed in the spanish-sport 2nd hand niche.
-
-The app was implemented completely thinking in the sudamos-business and not in being a good abstraction of a minimal marketplace. However, for anyone who is starting a marketplace in Ruby on Rails, this repo could potentially be a very useful start-point.
+Sudamos is a simple Ruby on Rails P2P marketplace focussed in the spanish-sport 2nd hand niche. The app was initially implemented without the intention  thinking in the sudamos-business and not in being a good abstraction of what a P2P marketplace should be. However, for anyone who is starting a marketplace in Ruby on Rails, this repo could potentially be a useful start-point.
 
 Write me a line if you want to use this platform in a production environment.
 
@@ -22,7 +22,7 @@ Write me a line if you want to use this platform in a production environment.
 
 ### Configs
 
-Sudamos uses some 3rd party services which have to be setup and referenced via their API keys into the `config/application.yml` file. Basically, all the API keys and tokens of Sudamos are stored under that file, managed by the gem https://github.com/laserlemon/figaro.
+Sudamos uses some 3rd party services which have configured into the `config/application.yml` file. Basically, all the env vars of Sudamos are stored under that file, managed by the gem https://github.com/laserlemon/figaro.
 
 #### List of 3rd party services
 
