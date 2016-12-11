@@ -1,4 +1,6 @@
-_This is a **legacy project**, not maintained anymore_
+#### _This is a legacy project, not maintained anymore._
+
+---
 
 [![Build Status](https://travis-ci.org/danimashu/sudamos.svg?branch=master)](https://travis-ci.org/danimashu/sudamos)
 [![Code Climate](https://codeclimate.com/github/danimashu/sudamos/badges/gpa.svg)](https://codeclimate.com/github/danimashu/sudamos)
